@@ -8,4 +8,5 @@ services:
         volumes:
             - ~/.aws:/root/.aws:ro
             - ~/.boto:/root/.boto:ro
-            - ./app/src:/usr/src/app
+            - ./app/src:/usr/src/app/src:ro
+            - ./app/output:/usr/src/app/output
