@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    app:
+        build: ./app
+        image: versive/aws-cloudwatch-metrics:latest
+
+        volumes:
+            - ~/.aws:/root/.aws:ro
+            - ~/.boto:/root/.boto:ro
+            - ./app/src:/usr/src/app
