@@ -45,7 +45,7 @@ aws_secret_access_key = AtW...KJX
 2. `$ git clone git:thisscript`
 3. `$ cd there`
 4. `docker-compose run --rm app`
-5.
+5. ./app/output/ will contain the report
 
 ## Limitations
 
