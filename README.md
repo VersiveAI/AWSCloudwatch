@@ -6,6 +6,47 @@ This is a [dockerized](https://www.docker.com/) Python script, which generates a
 
 The script gets information from [AWS Cloudwatch](http://docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-statistics.html).
 
+## How to run
+
+### Prerequizites
+
+The following two filesystem entities will be mapped to a dockerized container in `ro` mode.
+
+1. ~/.aws/
+2. ~/.boto
+
+#### Example ~/.aws/config
+
+```
+[default]
+output = json
+region = us-west-2
+```
+
+#### Example ~/.aws/config
+
+```
+[default]
+aws_access_key_id = AK...TUA
+aws_secret_access_key = AtW...KJX
+```
+
+#### Example ~/.aws/config
+
+```
+[Credentials]
+aws_access_key_id = AK...TUA
+aws_secret_access_key = AtW...KJX
+```
+
+### Exec
+
+1. Install [docker](https://www.docker.com/)
+2. `$ git clone git:thisscript`
+3. `$ cd there`
+4. `docker-compose run --rm app`
+5.
+
 ## Limitations
 
 [AWS Cloudwatch](http://docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-statistics.html) has internal limitation:
