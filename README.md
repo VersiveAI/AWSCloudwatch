@@ -10,9 +10,9 @@ The script gets information from [AWS Cloudwatch](http://docs.aws.amazon.com/cli
 
 ### Prerequizites
 
-The following two filesystem entities will be mapped to a dockerized container in `ro` mode.
+Create the following two filesystem entities.  They will be mapped to a dockerized container in `ro` mode.
 
-1. ~/.aws/
+1. ~/.aws/config
 2. ~/.boto
 
 #### Example ~/.aws/config
@@ -23,15 +23,7 @@ output = json
 region = us-west-2
 ```
 
-#### Example ~/.aws/config
-
-```
-[default]
-aws_access_key_id = AK...TUA
-aws_secret_access_key = AtW...KJX
-```
-
-#### Example ~/.aws/config
+#### Example ~/.boto
 
 ```
 [Credentials]
@@ -41,11 +33,13 @@ aws_secret_access_key = AtW...KJX
 
 ### Exec
 
-1. Install [docker](https://www.docker.com/)
-2. `$ git clone git:thisscript`
-3. `$ cd there`
-4. `docker-compose run --rm app`
-5. ./app/output/ will contain the report
+1. Install [docker](https://www.docker.com/) - [AWS instructions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html)
+2. Install docker-compose: https://github.com/docker/compose/releases
+3. Make docker-compose available: `sudo chmod 755 /usr/local/bin/docker-compose`
+4. `$ git clone git:thisscript`
+5. `$ cd there`
+6. `docker-compose run --rm app`
+7. ./app/output/ will contain the report
 
 ## Limitations
 
